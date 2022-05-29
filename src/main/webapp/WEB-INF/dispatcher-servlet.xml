@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.codegym.controller"/>
+
+    <mvc:annotation-driven/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>
+<!--        Tập tin cấu hình này chứa đúng một thẻ <bean> . Thẻ này chứa các thuộc tính khai báo các namespace để sử dụng cho các thẻ ở phần cấu hình. Thông thường, chúng ta dùng tới đâu thì khai báo tới đó. Tuy nhiên, chúng ta có thể khai báo tất cả những gì cần thiết để chuẩn bị cho các khả năng có thể sử dụng cho ứng dụng sau này.-->
+
+<!--Chúng ta hãy chú ý đến thẻ <bean> có khai báo class  = "org.springframework.web.servlet.view.InternalResourceViewResolver". Sau khi một action trong controller hoàn thành nhiệm vụ, thì nó phải chỉ ra view nào cần được sử dụng để hiển thị giao diện kết quả cho người dùng. Chỉ có tên view được chỉ định trong action, còn vị trí đặt view, hoặc phần mở rộng của view thì giao lại cho ViewResolver giải quyết.-->
+
+<!--    Thẻ <context:component-scan base-package = "com.codegym.controller"> sẽ giúp cho ứng dụng tham chiếu đến các lớp controllers.-->
