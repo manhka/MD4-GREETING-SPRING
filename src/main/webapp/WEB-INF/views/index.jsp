@@ -4,6 +4,7 @@
     <title>Greeting</title>
 </head>
 <body>
-<h1>Hello Spring MVC</h1>
+<h1>Hello: ${ten}</h1>
 </body>
 </html>
+<%--${name}: là biểu thức để in giá trị của biến name--%>
